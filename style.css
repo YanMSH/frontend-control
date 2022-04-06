@@ -1,0 +1,78 @@
+.modal {
+  margin: 32px auto;
+  width: 480px;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  background-color: #F7F5F9;
+  padding: 0.01px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.modal__title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.modal__form {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.form__input {
+  display: block;
+  -webkit-box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+          box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+  padding-left: 15px;
+  width: 400px;
+  height: 48px;
+  margin: 25px auto;
+  border: none;
+  border-radius: 6px;
+}
+
+.form__input:focus {
+  border: 1px solid #854FC8;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #D0C9D6;
+}
+
+.form__input:-ms-input-placeholder {
+  color: #D0C9D6;
+}
+
+.form__input::-ms-input-placeholder {
+  color: #D0C9D6;
+}
+
+.form__input::placeholder {
+  color: #D0C9D6;
+}
+
+.form__button {
+  display: block;
+  background-color: #6979F8;
+  width: 83.33%;
+  height: 48px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 auto 40px;
+  border-radius: 6px;
+  border: none;
+}
+/*# sourceMappingURL=style.css.map */
