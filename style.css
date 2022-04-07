@@ -40,7 +40,7 @@
 }
 
 .form__input:focus {
-  border: 1px solid #854FC8;
+  outline: 1px solid #854FC8;
 }
 
 .form__input::-webkit-input-placeholder {
@@ -59,6 +59,11 @@
   color: #D0C9D6;
 }
 
+.form__input-invalid {
+  border: 1px solid #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
 .form__button {
   display: block;
   background-color: #6979F8;
@@ -74,5 +79,60 @@
   margin: 0 auto 40px;
   border-radius: 6px;
   border: none;
+}
+
+.status_message {
+  width: 360px;
+  margin: 16px auto;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  border-radius: 12px;
+  opacity: 0;
+}
+
+.message_intro {
+  -webkit-animation-name: message;
+          animation-name: message;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.message_bad {
+  background-color: rgba(220, 53, 69, 0.5);
+}
+
+.message_good {
+  background-color: rgba(40, 167, 69, 0.5);
+}
+
+@-webkit-keyframes message {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes message {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

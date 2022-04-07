@@ -1,5 +1,6 @@
 $bg-color:#F7F5F9;
 $acc-color:#6979F8;
+$input-focus-color:#854FC8;
 $placeholder-color:#D0C9D6;
 $button-text-color:#FFFFFF;
 
@@ -45,11 +46,16 @@ $button-text-color:#FFFFFF;
     border:none;
     border-radius: 6px;
     &:focus{
-        border: 1px solid #854FC8;
+        outline: 1px solid $input-focus-color;
     }
     &::placeholder{
         color: $placeholder-color;
     }
+}
+
+.form__input-invalid{
+    border: 1px solid rgba(220,53,69,1);
+    background-color:rgba(220,53,69,0.1)
 }
 
 
@@ -69,4 +75,45 @@ $button-text-color:#FFFFFF;
     margin:0 auto 40px;
     border-radius: 6px;
     border:none;
+}
+
+
+.status_message{
+    width:360px;
+    margin:16px auto;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    padding:16px;
+    border-radius:12px;
+    opacity:0;
+}
+
+.message_intro {
+    animation-name: message;
+    animation-duration: 5s;
+}
+
+.message_bad{
+    background-color: rgba(220,53,69,0.5);
+}
+
+.message_good{
+    background-color: rgba(40,167,69, 0.5);
+}
+
+@keyframes message {
+    0% {
+        opacity: 0;
+    } 
+    50% {
+        opacity:0.99;
+    }  
+    100% {
+        opacity: 0;
+    }
 }
