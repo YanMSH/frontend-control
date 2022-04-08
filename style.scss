@@ -4,13 +4,16 @@ $input-focus-color:#854FC8;
 $placeholder-color:#D0C9D6;
 $button-text-color:#FFFFFF;
 
-
+@mixin font-roboto{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
 
 .modal{
     margin: 32px auto;
     width:480px;
-    //filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
     background-color: $bg-color;
     padding:0.01px;
     overflow: hidden;
@@ -18,8 +21,7 @@ $button-text-color:#FFFFFF;
 }
 
 .modal__title{
-    font-family: 'Roboto';
-    font-style: normal;
+    @include font-roboto;
     font-weight: 700;
     font-size: 24px;
     line-height: 20px;
@@ -28,10 +30,7 @@ $button-text-color:#FFFFFF;
 }
 
 .modal__form{
-    //display: block;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+    @include font-roboto;
     font-size: 15px;
     line-height: 20px;
 }
@@ -54,20 +53,16 @@ $button-text-color:#FFFFFF;
 }
 
 .form__input-invalid{
-    border: 1px solid rgba(220,53,69,1);
-    background-color:rgba(220,53,69,0.1)
+    outline: 1px solid rgba(220,53,69,1);
+    background-color:rgba(220,53,69,0.1);
 }
 
-
-
 .form__button{
+    @include font-roboto;
     display:block;
     background-color: #6979F8;
     width:83.33%;
     height:48px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
     font-size: 17px;
     line-height: 22px;
     text-align:center;
@@ -77,14 +72,11 @@ $button-text-color:#FFFFFF;
     border:none;
 }
 
-
 .status_message{
+    @include font-roboto;
     width:360px;
     margin:16px auto;
     text-align: center;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
     font-size: 17px;
     line-height: 22px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
@@ -95,7 +87,7 @@ $button-text-color:#FFFFFF;
 
 .message_intro {
     animation-name: message;
-    animation-duration: 5s;
+    animation-duration: 7.5s;
 }
 
 .message_bad{
@@ -108,7 +100,7 @@ $button-text-color:#FFFFFF;
 
 @keyframes message {
     0% {
-        opacity: 0;
+        opacity: 0.1;
     } 
     50% {
         opacity:0.99;

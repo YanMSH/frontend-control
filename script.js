@@ -1,10 +1,11 @@
-const form = document.getElementById('form');
+const form = document.getElementsByClassName('form')[0];
 const phoneInput = form.phone;
 const emailInput = form.email;
 const nameInput = form.name;
 const statusMessage = document.getElementsByClassName('status_message')[0];
 
 const emailIsValid = (email) => {
+    if(email.length === 0){return true}
     const regExp =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return regExp.test(email);
 };
@@ -23,7 +24,7 @@ const clearForm = () => {
     nameInput.value = '';
     phoneInput.value = '';
     emailInput.value = '';
-}
+};
 
 const errorMessage = (errorType) => {
     if(errorType === 'form'){
@@ -37,8 +38,8 @@ const errorMessage = (errorType) => {
     setTimeout(()=>{
         statusMessage.classList.remove('message_intro'); 
         statusMessage.classList.remove('message_bad');
-    }, 5000)
-}
+    }, 7500);
+};
 
 const successMessage = () => {
     statusMessage.innerText = 'Ваши данные успешно отправлены на сервер'
@@ -47,20 +48,27 @@ const successMessage = () => {
     setTimeout(()=>{
         statusMessage.classList.remove('message_intro'); 
         statusMessage.classList.remove('message_good');
-    }, 5000)
-}
-
+    }, 7500);
+};
 
 form.onsubmit = async(e) => {
     e.preventDefault();
-
-    let formVal = {
+    let formVal;
+    if(emailInput.value.length === 0){
+        formVal = {
+            name:nameInput.value,
+            phone:phoneInput.value,
+            email:'none'
+        };
+    }
+    else {
+        formVal = {
             name:nameInput.value,
             phone:phoneInput.value,
             email:emailInput.value
         };
-
-
+    }
+    
     if(!emailIsValid(emailInput.value)){
         emailInput.classList.add('form__input-invalid');
         emailInput.addEventListener('click', ()=>{emailInput.classList.remove('form__input-invalid');})
@@ -80,28 +88,18 @@ form.onsubmit = async(e) => {
     }
 
     if(emailIsValid(emailInput.value) && phoneIsValid(phoneInput.value) && nameIsValid(nameInput.value)){
-    //404 here: https://60376bfd5435040017722533.mockapi.io/formRej
-    //201 here: https://60376bfd5435040017722533.mockapi.io/form
 
-        let response = await fetch('https://60376bfd5435040017722533.mockapi.io/form', {
-        method:'POST',
-        body: {
-            name:nameInput.value,
-            phone:phoneInput.value,
-            email:emailInput.value
-            }    
+    let response = await fetch('https://60376bfd5435040017722533.mockapi.io/form', 
+        {
+            method:'POST',
+            body: {
+                name:nameInput.value,
+                phone:phoneInput.value,
+                email:emailInput.value
+                }    
         });
 
-        let result = await response.json();
-        clearForm();
-        response.status !== 201 ? errorMessage('badHTTP') : successMessage();
-        
-        console.log('Form below:')    
-        console.log(formVal);
-        console.log("Result below:")
-        console.log(result); 
-        console.log('HTTP code below:')
-        console.log(response.status)
-    }
-    
+    clearForm();
+    response.status !== 201 ? errorMessage('badHTTP') : successMessage();
+    };
 }        

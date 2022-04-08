@@ -9,20 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
-    
     <div class="modal">
         <h1 class="modal__title">Задать вопрос</h1>
         <div class="modal__form">
-            <form id='form' action="https://60376bfd5435040017722533.mockapi.io/form" method="POST">
+            <form class='form' action="https://60376bfd5435040017722533.mockapi.io/form" method="POST">
                     <input type="text" name="name" class="form__input" placeholder="Фамилия Имя Отчество *">
                     <input type="tel" name="phone" class="form__input" placeholder="Телефон *">
-                    <input type="email" name="email" class="form__input" placeholder="Email *">
+                    <input type="email" name="email" class="form__input" placeholder="Email">
                     <button class="form__button" type="submit">ОТПРАВИТЬ ЗАПРОС</button>
             </form>
-    </div>
+        </div>
     </div>
     <div class="status_message">
         Error

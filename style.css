@@ -1,8 +1,8 @@
 .modal {
   margin: 32px auto;
   width: 480px;
-  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  -webkit-filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.25));
   background-color: #F7F5F9;
   padding: 0.01px;
   overflow: hidden;
@@ -12,6 +12,7 @@
 .modal__title {
   font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
   font-weight: 700;
   font-size: 24px;
   line-height: 20px;
@@ -60,18 +61,18 @@
 }
 
 .form__input-invalid {
-  border: 1px solid #dc3545;
+  outline: 1px solid #dc3545;
   background-color: rgba(220, 53, 69, 0.1);
 }
 
 .form__button {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
   display: block;
   background-color: #6979F8;
   width: 83.33%;
   height: 48px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
   font-size: 17px;
   line-height: 22px;
   text-align: center;
@@ -82,12 +83,12 @@
 }
 
 .status_message {
-  width: 360px;
-  margin: 16px auto;
-  text-align: center;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
+  width: 360px;
+  margin: 16px auto;
+  text-align: center;
   font-size: 17px;
   line-height: 22px;
   -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
@@ -100,8 +101,8 @@
 .message_intro {
   -webkit-animation-name: message;
           animation-name: message;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 7.5s;
+          animation-duration: 7.5s;
 }
 
 .message_bad {
@@ -114,7 +115,7 @@
 
 @-webkit-keyframes message {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
   50% {
     opacity: 0.99;
@@ -126,7 +127,7 @@
 
 @keyframes message {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
   50% {
     opacity: 0.99;
